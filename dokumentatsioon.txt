@@ -1,0 +1,29 @@
+Sisendtekstiks on morfoloogiliselt märgentatud ajakirjandustekst, mis asub failis kroonika_2003.t3. Lause algust ning lõppu tähistavad <s> ja </s> märgendid. Iga sõna ning tema analüüsid on omaette real.
+Selle ülesande eesmärgiks on saada väljund, mis tagastab sagedusloendi tekstis asuvate kaassõnadest ja neile vahetult eelnevate nimisõnade käänetest. Loend peab välja nägema kujul nimisõna kääne + kaassõna (nt g mööda). Mitmus ja ainsus on selles ülesandes võrdsustatud.
+Skript:
+Skript ise asub failis yl14.sh ning failile on teistele antud õigused seda kasutada chmod u+x käsuga.
+Skript algab faili kolmandalt realt (3.) Cat käsuga alustatakse faili kroonika_2003.t3 sisu vaatamist.
+4. Esimese sed käsuga jäetakse kõikidele sõnadele ainult esimene analüüs alles.
+5. Tr käsuga tõsteti kõik ühele reale, et oleks lihtsam leida kaassõnad, mis järgnevad nimisõnale.
+6.-7. Teise sed käsuga leian nimisõna analüüsi ning sellele järgneva kaassõna ning selle analüüsi. Nimisõna analüüsi ette ning kaassõna analüüsi taha panin ’#’ märgi, et saaksin 7. real asuva tr käsuga need uuele reale tõsta.
+8. Grep käsk on identne 6. real asuva sed käsuga, mis eraldab need read, kus asuvad ainult nimisõna analüüs ning sellele järgnev kaassõna koos analüüsiga.
+9. Sedi käsuga korrastatakse read niimoodi, et nimisõna analüüsist jääks alles ainult kääne ning kaassõna ilma analüüsita.
+10. Põhimõtteliselt sama, mis 9. real asuv sed käsk, ainult et see sed käsk on kohandatud aditiivis oleva nimisõna jaoks, mis on kujul „_S_ adt,“ (teised nimisõnad on kujul nt „_S_ sg nom,“, mida 9. real olev käsk rakendabki)
+11. Toimub sagedusloendi koostamine ning väljund tuleb kujul: 
+72 g mööda
+59 g pärast
+.....
+seletus ’72 g mööda’ kohta: 72 tähistab esinemiste arvu tekstis, kus nimisõna on omastavas käändes (g) ning sellele järgneb kaassõna mööda.
+
+Käänete lühendid:
+g – genitiiv
+p – partitiiv
+n – nominatiiv
+el – elatiiv
+ad – adessiiv
+in – inessiiv
+kom – komitatiiv
+all – allatiiv
+tr – translatiiv 
+adt – aditiiv
+abl - ablatiiv
