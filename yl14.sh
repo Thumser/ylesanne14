@@ -10,3 +10,4 @@ cat kroonika_2003.t3 \
 | sed 's/_S_ \([^ ,]*\), \/\/ \([^ ]*\) .*/\1 \2/' \
 | sort | uniq -c | sort -nr | less
 
+#OK
